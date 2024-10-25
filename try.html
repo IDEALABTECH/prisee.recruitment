@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Tuyển Dụng PRISEE</title>
+    <link rel="stylesheet" href="try.css">
+</head>
+<body>
+
+    <!-- Header --> 
+    <header>
+        <h1>Phát triển đam mê và kiến tạo tương lai tại PRISEE</h1>
+        <br/>
+        <p>Tham gia vào một trong năm ngôi nhà của PRISEE và phát triển bản thân</p>
+    </header>
+
+    <!-- Search and Filter Section -->
+    <section id="search-filter">
+        <input type="text" id="search" placeholder="Tìm kiếm công việc..." oninput="filterJobs()">
+        <select id="jobType" onchange="filterJobs()">
+            <option value="all">Tất cả loại công việc</option>
+            <option value="fulltime">1 nhiệm kì</option>
+            <option value="parttime">Nửa nhiệm kì</option>
+        </select>
+        <select id="house" onchange="filterJobs()">
+            <option value="all">Tất cả các nhà</option>
+            <option value="Photon">Photon House</option>
+            <option value="Rise">Rise House</option>
+            <option value="Idea">Idea House</option>
+            <option value="Symposia">Symposia House</option>
+            <option value="EE">EE House</option>
+        </select>
+    </section>
+
+    <!-- Job List -->
+    <section id="job-list">
+        <h2>Danh Sách Việc Làm</h2>
+        <div id="jobs">
+            <!-- Các công việc sẽ được hiển thị tại đây -->
+        </div>
+    </section>
+
+    <!-- Job Description Modal -->
+    <div id="jobModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeJobModal()">&times;</span>
+            <img id="jobImage" src="" alt="Mô tả công việc">
+        </div>
+    </div>
+
+    <!-- Application Form Modal -->
+    <div id="applyModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeApplyModal()">&times;</span>
+            <h2>Ứng tuyển công việc</h2>
+            <form id="applyForm">
+                <label for="applicantName">Họ và Tên:</label>
+                <input type="text" id="applicantName" placeholder="Tên của bạn" required>
+                
+                <label for="applicantEmail">Email:</label>
+                <input type="email" id="applicantEmail" placeholder="Email của bạn" required>
+
+                <label for="applicantPhone">Số Điện Thoại:</label>
+                <input type="tel" id="applicantPhone" placeholder="Số điện thoại của bạn" required>
+                
+                <label for="applicantHouse">Chọn nhà:</label>
+                <select id="applicantHouse" required>
+                    <option value="">Chọn nhà của bạn</option>
+                    <option value="Photon">Photon House</option>
+                    <option value="Rise">Rise House</option>
+                    <option value="Idea">Idea House</option>
+                    <option value="Symposia">Symposia House</option>
+                    <option value="EE">EE House</option>
+                </select>
+
+                <label for="applicantMessage">Thông điệp của bạn:</label>
+                <textarea id="applicantMessage" placeholder="Chia sẻ thêm về bản thân bạn..." required></textarea>
+
+                <button type="submit">Gửi Đơn Ứng Tuyển</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="try.js"></script>
+</body>
+</html>
