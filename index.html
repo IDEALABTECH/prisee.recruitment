@@ -5,15 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang Tuyển Dụng PRISEE</title>
     <link rel="stylesheet" href="try.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
 
-    <!-- Header --> 
-    <header>
+<header>
+    
+    <div class="container">
+        <div>
+        <div id="sidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+    
+        <div class="main-content">
+            <button class="openbtn" onclick="openNav()">&#9776;</button>
+        </div>
+    
+        <script>
+            function openNav() {
+                document.getElementById("sidebar").style.width = "250px";
+            }
+    
+            function closeNav() {
+                document.getElementById("sidebar").style.width = "0";
+            }
+        </script>
+        </div>
+        <div class="logo">
+            <img src="logo.png" alt="PRISEE Logo">
+        </div>
+        <nav>
+            <ul class="navbar">
+               
+                <li><a href="#home">Trang Chủ</a></li>
+                <li><a href="#services">Dịch Vụ</a></li>
+                <li><a href="#about">Về Chúng Tôi</a></li>
+                <li><a href="#contact">Liên Hệ</a></li>
+            </ul>
+        </nav>
+        <div class="search-container">
+            <input type="text" placeholder="Tìm kiếm..." aria-label="Tìm kiếm">
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </div>
+    </div>
+</header>
         <h1>Phát triển đam mê và kiến tạo tương lai tại PRISEE</h1>
         <br/>
         <p>Tham gia vào một trong năm ngôi nhà của PRISEE và phát triển bản thân</p>
-    </header>
 
     <!-- Search and Filter Section -->
     <section id="search-filter">
@@ -82,6 +125,67 @@
         </div>
     </div>
 
+<footer>
+    <div class="content">
+      <div class="top">
+        <div class="logo-details">
+          <i class="fab fa-slack"></i>
+          <span class="logo_name">CodingLab</span>
+        </div>
+        <div class="media-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="link-boxes">
+        <ul class="box">
+          <li class="link_name">Company</li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Contact us</a></li>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Get started</a></li>
+        </ul>
+        <ul class="box">
+          <li class="link_name">Services</li>
+          <li><a href="#">App design</a></li>
+          <li><a href="#">Web design</a></li>
+          <li><a href="#">Logo design</a></li>
+          <li><a href="#">Banner design</a></li>
+        </ul>
+        <ul class="box">
+          <li class="link_name">Account</li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">My account</a></li>
+          <li><a href="#">Prefrences</a></li>
+          <li><a href="#">Purchase</a></li>
+        </ul>
+        <ul class="box">
+          <li class="link_name">Courses</li>
+          <li><a href="#">HTML & CSS</a></li>
+          <li><a href="#">JavaScript</a></li>
+          <li><a href="#">Photography</a></li>
+          <li><a href="#">Photoshop</a></li>
+        </ul>
+        <ul class="box input-box">
+          <li class="link_name">Subscribe</li>
+          <li><input type="text" placeholder="Enter your email"></li>
+          <li><input type="button" value="Subscribe"></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom-details">
+      <div class="bottom_text">
+        <span class="copyright_text">Copyright © 2021 <a href="#">CodingLab.</a>All rights reserved</span>
+        <span class="policy_terms">
+          <a href="#">Privacy policy</a>
+          <a href="#">Terms & condition</a>
+        </span>
+      </div>
+    </div>
+  </footer>
     <script src="try.js"></script>
 </body>
 </html>
