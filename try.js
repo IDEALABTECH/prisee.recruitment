@@ -1,4 +1,7 @@
 const jobs = [
+    { title: "TEAM PROGRAMME", type: "fulltime", house: "EE", description: "" },
+        { title: "TEAM PROGRAMME", type: "partime", house: "EE", description: "" },
+
     { title: "Web Developer", type: "fulltime", house: "Photon", description: "Xây dựng và tối ưu website" },
     { title: "Data Scientist", type: "internship", house: "Rise", description: "Phân tích dữ liệu và mô hình hoá" },
     // Thêm các công việc khác
