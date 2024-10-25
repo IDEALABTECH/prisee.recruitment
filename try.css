@@ -5,14 +5,7 @@
 }
 
 /* Header */
-header {
-    background-color: #1f0783; /* Sử dụng màu chủ đạo */
-    padding: 20px 40px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
+
 
 .logo img {
     width: 150px;
@@ -96,7 +89,7 @@ header {
 .search-container button:hover {
     background-color: #fec224;
 }
-ooter {
+footer {
   background: #140B5C;
   width: 100%;
   margin-top: auto;
