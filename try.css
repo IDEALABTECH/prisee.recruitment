@@ -1,94 +1,50 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+
+.hi {
+  display: flex;
+  background: #160460;
+  justify-content: center;
+  padding: 10px;
+  position: relative; /* Để hiệu ứng thêm vào sau */
+  width: 100%; /* Kéo dài từ trái sang phải màn hình */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Đổ bóng */
+  animation: slideDown 0.5s ease-in-out; /* Thêm hiệu ứng animation */
 }
 
-/* Header */
-
+.logo {
+  display: flex;
+}
 
 .logo img {
-    width: 150px;
-    transition: transform 0.3s;
+  width: 350px; /* Kích thước logo */
+  height: 180px;
+    transition: transform 0.3s; /* Hiệu ứng khi hover */
 }
 
 .logo img:hover {
-    transform: scale(1.1);
+  transform: scale(1.1); /* Tăng kích thước logo khi hover */
 }
 
-/* Navigation */
-.navbar {
-    display: flex;
-    list-style: none;
+.logo h1 {
+  color: rgb(240, 248, 8); /* Màu chữ */
+  font-size: 2em; /* Kích thước chữ */
+  margin: 0; /* Bỏ margin */
 }
 
-.navbar li {
-    margin: 0 20px;
+/* Hiệu ứng animation cho header */
+@keyframes slideDown {
+  from {
+      transform: translateY(-20px); /* Đẩy lên trên */
+      opacity: 0; /* Từ trong suốt */
+  }
+  to {
+      transform: translateY(0); /* Trở về vị trí ban đầu */
+      opacity: 1; /* Từ không trong suốt thành trong suốt */
+  }
 }
 
-.navbar a {
-    color: #FAAE03; /* Màu chữ */
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s, transform 0.3s;
-    position: relative;
-}
 
-.navbar a::after {
-    content: '';
-    display: block;
-    height: 2px;
-    width: 0;
-    background: #fec224; /* Màu cho hiệu ứng */
-    transition: width 0.4s;
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-}
 
-.navbar a:hover {
-    color: #fec224;
-}
 
-.navbar a:hover::after {
-    width: 100%;
-}
-
-/* Search Container */
-.search-container {
-    display: flex;
-    align-items: center;
-}
-
-.search-container input {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    width: 200px;
-    transition: width 0.4s;
-}
-
-.search-container input:focus {
-    width: 250px;
-    outline: none;
-    border: 1px solid #FAAE03;
-}
-
-.search-container button {
-    padding: 10px;
-    border: none;
-    background-color: #FAAE03;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-left: 10px;
-}
-
-.search-container button:hover {
-    background-color: #fec224;
-}
 footer {
   background: #140B5C;
   width: 100%;
@@ -378,14 +334,11 @@ footer .bottom-details .bottom_text {
 p {
     font-size: 3rem;
     font-weight: bold;
-    color: #3498db;
+    color: #261495;
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
-p:hover {
-    transform: scale(1.1);
-    color: #e74c3c;
-}
+
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f5f5f5;
@@ -393,6 +346,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-weight:800px;
     padding: 20px;
 }
 
@@ -430,29 +384,43 @@ header p {
     font-size: 1.2rem;
     color: #555;
 }
-
 #search-filter {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 30px;
-    flex-wrap: wrap;
-    width: 100%;
-    max-width: 800px;
-    justify-content: center;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 800px;
+  justify-content: center;
 }
 
 #search-filter input, #search-filter select {
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    flex: 1;
-    transition: all 0.3s ease;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #481717;
+  border-radius: 8px;
+  flex: 1;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
+/* Đặt màu chữ placeholder thành đỏ */
+#search-filter input::placeholder {
+  color: red; /* Màu chữ placeholder */
+  opacity: 1; /* Đảm bảo độ trong suốt là 1 */
+}
+
+/* Hiệu ứng khi focus */
 #search-filter input:focus, #search-filter select:focus {
-    border-color: #0073e6;
-    box-shadow: 0 0 8px rgba(0, 115, 230, 0.2);
+  border-color: #0073e6; /* Màu viền khi focus */
+  box-shadow: 0 0 8px rgba(0, 115, 230, 0.2); /* Hiệu ứng bóng */
+  width: calc(100% + 50px); /*   Kéo dài thanh tìm kiếm */
+   border-radius: 4px 4px 0 0; /* Giữ góc tròn cho các phần còn lại */
+}
+
+h4 {
+   color: red
+   
 }
 
 #job-list {
@@ -584,4 +552,8 @@ header p {
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+body, h1, h2, h3, p {
+  margin: 0; /* Bỏ margin cho tất cả các phần tử */
+  padding: 0; /* Bỏ padding cho tất cả các phần tử */
 }
