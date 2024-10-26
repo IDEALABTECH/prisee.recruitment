@@ -1,30 +1,28 @@
-const jobs = [
-    { title: "TEAM PROGRAMME", type: "fulltime", house: "EE", description: "" },
-        { title: "TEAM PROGRAMME", type: "partime", house: "EE", description: "" },
+    const jobs = [
+        { title: "Web Developer", type: "fulltime", house: "Photon", description: "Xây dựng và tối ưu website" },
+        { title: "Data Scientist", type: "internship", house: "Rise", description: "Phân tích dữ liệu và mô hình hoá" },
+        // Thêm các công việc khác
+    ];
 
-    { title: "Web Developer", type: "fulltime", house: "Photon", description: "Xây dựng và tối ưu website" },
-    { title: "Data Scientist", type: "internship", house: "Rise", description: "Phân tích dữ liệu và mô hình hoá" },
-    // Thêm các công việc khác
-];
+    function displayJobs(jobList) {
+        const jobsContainer = document.getElementById("jobs");
+        jobsContainer.innerHTML = "";
+        jobList.forEach(job => {
+            const jobElement = document.createElement("div");
+            jobElement.classList.add("job");
+            jobElement.innerHTML = `
+             <h3>${job.title}</h3>            
 
-function displayJobs(jobList) {
-    const jobsContainer = document.getElementById("jobs");
-    jobsContainer.innerHTML = "";
-    jobList.forEach(job => {
-        const jobElement = document.createElement("div");
-        jobElement.classList.add("job");
-        jobElement.innerHTML = `
-            <h3>${job.title}</h3>
-            <p>Loại: ${job.type}</p>
-            <p>Nhà: ${job.house}</p>
-            <p>Mô tả: ${job.description}</p>
-            <br/>
-            <button onclick="openJobModal('${job.title}')">Xem Mô Tả</button>
-            <button onclick="openApplyModal()">Ứng tuyển</button>
-        `;
-        jobsContainer.appendChild(jobElement);
-    });
-}
+                <p>Loại: ${job.type}</p>
+                <p>Nhà: ${job.house}</p>
+                <p>Mô tả: ${job.description}</p>
+                <br/>
+                <button onclick="openJobModal('${job.title}')">Xem Mô Tả</button>
+                <button onclick="openApplyModal()">Ứng tuyển</button>
+            `;
+            jobsContainer.appendChild(jobElement);
+        });
+    }
 
 function filterJobs() {
     const search = document.getElementById("search").value.toLowerCase();
@@ -63,3 +61,5 @@ document.getElementById("applyForm").addEventListener("submit", function(event) 
 });
 
 window.onload = () => displayJobs(jobs);
+
+
