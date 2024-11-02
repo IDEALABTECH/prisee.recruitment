@@ -54,12 +54,9 @@ function closeApplyModal() {
     document.getElementById("applyModal").style.display = "none";
 }
 
-document.getElementById("applyForm").addEventListener("submit", function(event) {
-    event.preventDefault();
-    alert("Đơn ứng tuyển của bạn đã được gửi!");
-    closeApplyModal();
-});
+
 
 window.onload = () => displayJobs(jobs);
 
-
+  
+  
