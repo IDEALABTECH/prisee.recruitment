@@ -482,72 +482,140 @@ h4 {
     color: #010101;
     transform: translateY(-2px);
 }
-
+/* Modal Background */
 .modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: opacity 0.4s ease-in-out;
 }
 
+/* Modal Content */
 .modal-content {
-    background: #fff;
-    padding: 20px;
-    width: 90%;
-    max-width: 600px;
-    border-radius: 10px;
-    position: relative;
-    animation: fadeIn 0.4s ease;
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+  background-color: #ffffff;
+  margin: 5% auto;  
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  height: fit-content;
+  animation: slideDown 0.5s ease;
 }
 
+/* Animation for Modal Content */
+@keyframes slideDown {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Close Button */
 .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 1.5rem;
-    cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #ff5c5c;
+}
+
+/* Form Table */
+#applyForm table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#applyForm td {
+  padding: 2px;
 }
 
 #applyForm label {
-    font-weight: bold;
-    color: #333;
-    margin-top: 10px;
+ 
+    color: #0b0044; /* Màu chữ */
+    font-family: 'Arial', sans-serif; /* Font chữ */
+    font-size: 16px; /* Kích thước chữ */
+    font-weight: bold; /* Đậm chữ */
+    letter-spacing: 1px; /* Khoảng cách giữa các chữ cái */
+    text-transform: uppercase; /* Chuyển chữ thành in hoa */
+    transition: color 0.3s ease-in-out; /* Hiệu ứng chuyển màu */
+  
 }
 
-#applyForm input, #applyForm select, #applyForm textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    transition: border-color 0.3s;
+#applyForm input[type="text"],
+#applyForm input[type="email"],
+#applyForm input[type="tel"],
+#applyForm input[type="url"],
+#applyForm select,
+#applyForm textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.2rem;
+  border: 3px solid #0a5e9ed6;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #555555;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-#applyForm input:focus, #applyForm select:focus, #applyForm textarea:focus {
-    border-color: #0073e6;
+#applyForm input:focus,
+#applyForm select:focus,
+#applyForm textarea:focus {
+  border-color: #9609ee;
+  box-shadow: 0px 0px 8px rgba(74, 144, 226, 0.3);
+  outline: none;
 }
 
-#applyForm button {
-    background-color: #0073e6;
-    color: #fff;
-    border: none;
-    padding: 12px;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
+#applyForm textarea {
+  min-height: 50px;
+  resize: vertical;
 }
 
-#applyForm button:hover {
-    background-color: #005bb5;
-    transform: translateY(-2px);
+/* Submit Button */
+#applyForm button[type="submit"] {
+  background-color: #4a90e2;
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
+
+#applyForm button[type="submit"]:hover {
+  background-color: #357ab7;
+  box-shadow: 0px 4px 12px rgba(1, 51, 83, 0.3);
+}
+
+#applyForm button[type="submit"]:active {
+  background-color: #2c68a2;
+}
+
+/* Heading Styles */
+.modal-content h2 {
+  color: #4a90e2;
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+  
 
 @keyframes fadeIn {
     from { opacity: 0; }
